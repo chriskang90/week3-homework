@@ -1,0 +1,4 @@
+<div><h2><%= @place.title %></h2><%=link_to "Edit this place", "/places/#{@place.id}/edit"%></div>
+<img src="<%=@place.photo_url %>">
+<p> <%=@place.description%></p>
+<h4>Admission Price: $<%=@place.admission_price %></h4>

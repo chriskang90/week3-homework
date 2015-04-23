@@ -1,0 +1,12 @@
+<%=link_to "Add new place", "places/new"%>
+
+<h3>Places</h3>
+<ul>
+
+  <% @places.each do |place| %>
+    <li>
+      <div><%=link_to place.title, "/places/#{place.id}"%><%=link_to" | Delete", "/places/#{place.id}/delete"%></div>
+    </li>
+  <% end %>
+
+</ul>

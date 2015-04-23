@@ -1,0 +1,36 @@
+<%#
+References:
+1. How to prefill a form input with data that you actually want passed back to the model.
+http://stackoverflow.com/questions/26599276/value-vs-placeholder-attributes-in-html
+
+%>
+
+
+<%= stylesheet_link_tag "formstyle.css" %>
+
+<form action="/places/<%=@place.id%>/update">
+
+<div>
+Title <br>
+<input name="title" class="form" value="<%=@place.title%>">
+</div>
+
+<div>
+Photo URL <br>
+<input name="photo_url" class="form" value="<%=@place.photo_url%>">
+</div>
+
+<div>
+Admission Price <br>
+<input name="admission_price" class="form" value="<%=@place.admission_price%>">
+</div>
+
+<div>
+Description <br>
+<textarea name="description" class="descriptionBox"><%=@place.description%></textarea>
+</div>
+
+<br>
+<button>Submit</button>
+
+</form>
