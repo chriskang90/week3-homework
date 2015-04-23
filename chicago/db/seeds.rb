@@ -1,10 +1,11 @@
 # REFERENCES
-# Photo URLs found from google images. Please see the photo url link.
-# Descriptions found from wikipedia. Source cited in the description, see below.
+# 1. Photo URLs found from google images. Please see the photo url link.
+# 2. Descriptions found from wikipedia. Source cited in the description, see below.
 
 # Remove all existing entries in the database
 Place.delete_all
 
+# Add the new entries
 [{:title=> "Willis Tower Sky Deck", :photo_url => "http://upload.wikimedia.org/wikipedia/commons/b/ba/Sears_Tower_ss.jpg", :admission_price => 19.50, :description => "A bustling community of business, tourism and culture, Willis Tower is so much more than North America's tallest building. It’s home to large well-known companies as well as hundreds of thriving businesses run by smart, passionate people. More than an office building, it’s a cultural landmark and iconic Chicago tourist attraction. Willis Tower is a pivotal point of reference – from across town, from financial centers on both coasts, and from Europe, Asia, and the Middle East. It’s a building with retail and commercial office space at heart, but also inspires tens of thousands of visitors to take in the amazing views of the city and experience the breathtaking Ledge. (Source: www.willistower.com)"},
 {:title=> "Art Institute of Chicago", :photo_url => "http://media-2.web.britannica.com/eb-media/05/124305-004-F9B15553.jpg", :admission_price => 25.50, :description => "The Art Institute of Chicago (AIC) is an encyclopedic art museum located in Chicago's Grant Park. It features a collection of Impressionist and Post-Impressionist art in its permanent collection. Its holdings also include American art, Old Masters, European and American decorative arts, Asian art, modern and contemporary art, and architecture and industrial and graphic design. In addition, it houses the Ryerson & Burnham Libraries.
 Tracing its history to a free art school and gallery founded in 1866, the museum is located at 111 South Michigan Avenue in the Chicago Landmark Historic Michigan Boulevard District. It is associated with the School of the Art Institute of Chicago and is overseen by Director and President Douglas Druick. At one million square feet, it is the second-largest art museum in the United States, after the Metropolitan Museum of Art. (Source: http://en.wikipedia.org/wiki/Art_Institute_of_Chicago)"},
@@ -21,12 +22,3 @@ Based on 2009 attendance, the Museum of Science and Industry was the second larg
 	p.description = place_hash[:description]
 	p.save
 end
-
-
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)

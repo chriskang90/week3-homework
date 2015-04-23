@@ -2,3 +2,40 @@
 <img src="<%=@place.photo_url %>">
 <p> <%=@place.description%></p>
 <h4>Admission Price: $<%=@place.admission_price %></h4>
+
+<h3>Add Review</h3>
+
+<%= stylesheet_link_tag "formstyle.css" %>
+<form action="/places/<%=@place.id%>/review">
+
+<div>
+Review Title <br>
+<input name="rtitle" class="form">
+</div>
+
+<div>
+Rating <br>
+<input name="rating" class="form">
+</div>
+
+<div>
+Description <br>
+<textarea name="description" class="descriptionBox"></textarea>
+</div>
+
+<br>
+<button>Submit</button>
+
+</form>
+
+<h3>Current Reviews </h3>
+
+<%= @reviews.each do |review|%>
+
+<hr>
+<p>Review Title: <%=review.title%></p>
+<p>Rating: <%=review.rating%></p>
+<p>Description: </p>
+<p><%=review.description%></p>
+
+<% end %>
