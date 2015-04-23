@@ -39,8 +39,7 @@ Rating<br>
 
 <h3>Current Reviews </h3>
 
-<%= @reviews.each do |review| %>
-
+<% @reviews.each do |review| %>
 <p>(<%=review.rating%> stars) <%=review.title%>: <%=review.description%> </p>
 
 <% end %>

@@ -14,6 +14,7 @@ class PlacesController < ApplicationController
 	def show
 		@place = Place.find_by(:id => params["id"])
 		@reviews = Review.where(:place_id => params["id"]).order(id: :desc)
+
 		if @place != nil
 			render "show"
 		else
