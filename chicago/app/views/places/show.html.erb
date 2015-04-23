@@ -1,3 +1,9 @@
+<%#
+References:
+1. How to include a selection for the form
+http://www.echoecho.com/htmlforms11.htm
+%>
+
 <div><h2><%= @place.title %></h2><%=link_to "Edit this place", "/places/#{@place.id}/edit"%></div>
 <img src="<%=@place.photo_url %>">
 <p> <%=@place.description%></p>
@@ -8,34 +14,33 @@
 <%= stylesheet_link_tag "formstyle.css" %>
 <form action="/places/<%=@place.id%>/review">
 
-<div>
-Review Title <br>
+Review Title<br>
 <input name="rtitle" class="form">
-</div>
-
-<div>
-Rating <br>
-<input name="rating" class="form">
-</div>
-
-<div>
-Description <br>
-<textarea name="description" class="descriptionBox"></textarea>
-</div>
-
 <br>
+
+Description<br>  
+<input name="description" class="form">
+<br>
+
+Rating<br>
+<select name="rating">
+<option value="5">5 stars</option>
+<option value="4">4 stars</option>
+<option value="3">3 stars</option>
+<option value="2">2 stars</option>
+<option value="1">1 stars</option>
+</select>
+<br>
+<br>
+
 <button>Submit</button>
 
 </form>
 
 <h3>Current Reviews </h3>
 
-<%= @reviews.each do |review|%>
+<%= @reviews.each do |review| %>
 
-<hr>
-<p>Review Title: <%=review.title%></p>
-<p>Rating: <%=review.rating%></p>
-<p>Description: </p>
-<p><%=review.description%></p>
+<p>(<%=review.rating%> stars) <%=review.title%>: <%=review.description%> </p>
 
 <% end %>

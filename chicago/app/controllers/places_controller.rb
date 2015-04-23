@@ -1,4 +1,7 @@
 # This is the Places controller class.
+# References
+# 1. How to order an active record response
+# http://guides.rubyonrails.org/active_record_querying.html#ordering
 
 class PlacesController < ApplicationController
 
@@ -10,7 +13,7 @@ class PlacesController < ApplicationController
 	# This method retrieves the requested place (if it exists) and also pulls the reviews associated with the place
 	def show
 		@place = Place.find_by(:id => params["id"])
-		@reviews = Review.where(:place_id => params["id"])
+		@reviews = Review.where(:place_id => params["id"]).order(id: :desc)
 		if @place != nil
 			render "show"
 		else
